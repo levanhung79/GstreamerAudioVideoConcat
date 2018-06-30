@@ -8,8 +8,8 @@ Ubuntu 16.04 or higher
 Environment installation:
 1. Install Gstreamer Editing Service:
 $ sudo apt-get update
-$ sudo apt-get -y upgrade
-$ sudo apt-get install libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-doc gstreamer1.0-tools gstreamer-editing-services1.0
+&& sudo apt-get -y upgrade
+&& sudo apt-get install libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-doc gstreamer1.0-tools gstreamer-editing-services1.0
   
 2. Check python version
 $ python3 -V
