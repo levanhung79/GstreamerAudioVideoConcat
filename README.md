@@ -23,6 +23,6 @@ Run app:
 2. Run app:
 $ python3 MediaConcat.py <input folder> <output file path>
   
-3. Note:
-3.1. If <input folder> contains only video files or video files and audio files, app concatenates these files to create output video (in .ogv format).
-3.2. If <input folder> contains audio files and ONLY one image, app concatenates these audio files and combine with image file to create output video (in .ogv format).
+Note:
+If <input folder> contains only video files or video files and audio files, app concatenates these files to create output video (in .ogv format).
+If <input folder> contains audio files and ONLY one image, app concatenates these audio files and combine with image file to create output video (in .ogv format).
