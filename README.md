@@ -19,13 +19,13 @@ $ sudo apt-get install mediainfo && pip install pymediainfo
   
 ### Run app:
 1. Concatenate video/audio files:
-   - Prepare input: Copy video/audio files you want to concatenate into the same folder <input folder>
+   - Prepare input: Copy *video/audio files* you want to concatenate into the same folder <input folder>
    - Run app:
      ```
      $ python MediaConcat.py <input folder> <output file path>
      ```
 2. Create video from one still image and multiple audio files:
-   - Prepare input: Copy image file and audio files you want to concatenate into the same folder <input folder>
+   - Prepare input: Copy *image file and audio files* you want to concatenate into the same folder <input folder>
    - Run app:
      ```
      $ python MediaConcat.py <input folder> <output file path>
