@@ -9,7 +9,7 @@ Ubuntu 16.04 or higher
 ### Environment installation:
 1. Install Gstreamer Editing Service:
 ```
-$ sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get install sudo apt-get install sudo apt-get install libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-doc gstreamer1.0-tools ges1.0-tools libges-1.0-0 libges-1.0-dev python3-pip
+$ sudo apt-get autoremove && sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get install libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-doc gstreamer1.0-tools ges1.0-tools libges-1.0-0 libges-1.0-dev python3-pip
 ```
 
 2. Install MediaInfo:
