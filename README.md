@@ -1,7 +1,7 @@
 # GstreamerAudioVideoConcat
 
-##### Concatenate video/audio files using Gstreamer Editing Service (gst-editing-services)
-##### Create video from one still image and multiple audio files using Gstreamer Editing Service (gst-editing-services)
+##### - Concatenate video/audio files using Gstreamer Editing Service (gst-editing-services)
+##### - Create video from one still image and multiple audio files using Gstreamer Editing Service (gst-editing-services)
 
 ### Prerequisites:
 Ubuntu 16.04 or higher
