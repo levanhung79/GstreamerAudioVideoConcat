@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import json
 import os
@@ -6,9 +6,7 @@ import sys
 import time
 import shutil
 import math
-#https://mediaarea.net/en/MediaInfo/Download/Ubuntu
-#sudo apt-get install mediainfo
-from pymediainfo import MediaInfo
+from ffprobe3 import FFProbe
 
 _MP3 = ".mp3"
 _WAV = ".wav"
@@ -61,7 +59,7 @@ class MediaConcater(object):
             fname = os.path.join(absFolderPath, mfile)
             fnameOnly = os.path.splitext(mfile)[0]
             if self.isVideoFile(mfile) or self.isAudioFile(mfile):
-                length = self.getLength(fname) / 1000.0 - 0.001
+                length = self.getLength(fname)# / 1000.0 - 0.001
                 #length = round(length, 3)
                 #length = math.ceil(length)
                 videoStr = "+clip" + _SPACE + fname + _SPACE + "start=" + str(totalLength) + _SPACE + "duration=" + str(length) + _SPACE + "layer=" + str(videoCount) + _SPACE
@@ -74,8 +72,10 @@ class MediaConcater(object):
         if videoCount == 0:
             print("Error: There is no media file in input folder. Check again.")
             return False
-            
-        imageStr = "+clip" + _SPACE + imageFile + _SPACE + "start=0" + _SPACE + "duration=" + str(totalLength) + _SPACE + "layer=" + str(videoCount) + _SPACE
+
+        imageStr = ''
+        if len(imageFile) > 0:
+            imageStr = "+clip" + _SPACE + imageFile + _SPACE + "start=0" + _SPACE + "duration=" + str(totalLength) + _SPACE + "layer=" + str(videoCount) + _SPACE
 
         absOutputFolderPath = os.path.abspath(outputPath)
         command = command + imageStr + "--outputuri=file:///" + absOutputFolderPath # + _SPACE + "--format=\"avimux:openh264enc,rate_control=2:audio/mpeg,mpegversion=4,bitrate=128000\""
@@ -88,15 +88,12 @@ class MediaConcater(object):
         return True
 
     def getLength(self, mediaPath):
-        media_info = MediaInfo.parse(mediaPath)
+        metadata=FFProbe(mediaPath)
         length = 0.0
-        for track in media_info.tracks:
-            if (track.track_type == 'Video') or (track.track_type == 'Audio'):
-                #print(track.bit_rate + track.bit_rate_mode + track.codec + track.duration)
-                #print(str(track.duration))
-                length = track.duration
-        #print(" -> mediaPath: " + mediaPath)
-        #print(" -> Length: " + str(length))
+        for stream in metadata.streams:
+            if (stream.is_video()) or (stream.is_audio()):
+                length = stream.duration_seconds()
+                #print(" -> Length: " + str(length))
         return length
 
     def isAudioFile(self, mediaPath):
