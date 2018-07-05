@@ -3,10 +3,10 @@
 ##### Concatenate video files using Gstreamer Editing Service (gst-editing-services)
 ##### Create video from one still image and multiple audio files using Gstreamer Editing Service (gst-editing-services)
 
-## Prerequisites:
+### Prerequisites:
 Ubuntu 16.04 or higher
 
-## Environment installation:
+### Environment installation:
 1. Install Gstreamer Editing Service:
 ```
 $ sudo apt-get update
@@ -19,7 +19,7 @@ $ sudo apt-get install sudo apt-get install sudo apt-get install libgstreamer1.0
 $ sudo apt-get install mediainfo && pip install pymediainfo
 ```
   
-Run app:
+### Run app:
 1. Prepare input: Copy videos, audios, image you want to concatenate into the same folder <input folder>
 
 2. Run app:
