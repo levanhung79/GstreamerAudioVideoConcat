@@ -22,7 +22,8 @@ _MKV = ".mkv"
 _M4V = ".m4v"
 _AVI = ".avi"
 _WMV = ".wmv"
-_VIDEO_TAGS = [_MP4, _MKV, _M4V, _AVI, _WMV]
+_OGV = ".ogv"
+_VIDEO_TAGS = [_MP4, _MKV, _M4V, _AVI, _WMV, _OGV]
 
 _JPG = ".jpg"
 _PNG = ".png"
