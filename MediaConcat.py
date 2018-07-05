@@ -82,7 +82,7 @@ class MediaConcater(object):
         # Run ges-launch for merging videos
         os.system(command)
 
-        print("Command: " + command)
+        #print("Command: " + command)
         print("--- %s seconds ---" % (time.time() - start_time))
         return True
 
