@@ -1,6 +1,6 @@
 # GstreamerAudioVideoConcat
 
-##### Concatenate video files using Gstreamer Editing Service (gst-editing-services)
+##### Concatenate video/audio files using Gstreamer Editing Service (gst-editing-services)
 ##### Create video from one still image and multiple audio files using Gstreamer Editing Service (gst-editing-services)
 
 ### Prerequisites:
@@ -18,13 +18,16 @@ $ sudo apt-get install mediainfo && pip install pymediainfo
 ```
   
 ### Run app:
-1. Prepare input: Copy videos, audios, image you want to concatenate into the same folder <input folder>
-
-2. Run app:
-```
-$ python MediaConcat.py <input folder> <output file path>
-```
-  
-3. Note:
-   - If <input folder> contains only video files or video files and audio files, app concatenates these files to create output video (in .ogv format).
-   - If <input folder> contains audio files and ONLY one image, app concatenates these audio files and combine with image file to create output video (in .ogv format).
+1. Concatenate video/audio files:
+   - Prepare input: Copy video/audio files you want to concatenate into the same folder <input folder>
+   - Run app:
+     ```
+     $ python MediaConcat.py <input folder> <output file path>
+     ```
+2. Create video from one still image and multiple audio files:
+   - Prepare input: Copy image file and audio files you want to concatenate into the same folder <input folder>
+   - Run app:
+     ```
+     $ python MediaConcat.py <input folder> <output file path>
+     ```  
+3. Note: Output video is in .ogv format (other formats are not supported at this moment)
